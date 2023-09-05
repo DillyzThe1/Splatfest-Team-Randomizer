@@ -58,7 +58,7 @@ async function gatherFests() {
     const s1_data = await fetchTeams("splatoon");
     const s2_data = await fetchTeams("splatoon_2");
     const s3_data = await fetchTeams("splatoon_3");
-    const newAltData = await fetchFile("assets/banner_alts.json);
+    const newAltData = await fetchFile("assets/banner_alts.json");
     altData = newAltData;   
 
     while (festTeams.length > 0)
@@ -105,6 +105,13 @@ async function gatherFests() {
     console.log(festTeams);
 }
 
+function genBannerPath(bannerName) {
+    if (!altData["alts"][bannerName])
+        return `./assets/banners/${bannerName}.png`;
+    var variant = Math.round(Math.random() * altData["alts"][bannerName].length);
+    return `./assets/banners/${altData["alts"][bannerName][variant]}.png`;
+}
+
 function generateFest() {
     var _teamcount = teamCount;
     if (_teamcount == 0)
@@ -118,19 +125,14 @@ function generateFest() {
         teams.push(festTeams[Math.round(Math.random() * festTeams.length)]);
     console.log(teams);
 
-    var variant = 0;
-    if (!altData["alts"][teams[0]]) {
-        console.log("no alt on index 0");
-    }
-
     //document.getElementById("bannerAlpha").hidden = false;
     //document.getElementById("bannerBravo").hidden = false;
     document.getElementById("bannerCharlie").hidden = _teamcount < 3;
 
-    document.getElementById("bannerAlpha").setAttribute("src", `./assets/banners/${teams[0]}.png`);
-    document.getElementById("bannerBravo").setAttribute("src", `./assets/banners/${teams[1]}.png`);
+    document.getElementById("bannerAlpha").setAttribute("src", genBannerPath(teams[0]));
+    document.getElementById("bannerBravo").setAttribute("src", genBannerPath(teams[1]));
     if (_teamcount == 3)
-        document.getElementById("bannerCharlie").setAttribute("src", `./assets/banners/${teams[2]}.png`);
+        document.getElementById("bannerCharlie").setAttribute("src", genBannerPath(teams[2]));
 
     document.getElementById("festname").textContent = _teamcount == 2 ? (`${teams[0]} vs ${teams[1]}`) : (`${teams[0]} vs ${teams[1]} vs ${teams[2]}`);
 }
