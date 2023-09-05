@@ -18,6 +18,9 @@ var teams = [];
 // Output Data
 var festTeams = ["Spongebob", "Patrick"];
 
+//
+var altData = {"alts":[]};
+
 function cycleTeamCount() {
     if (teamCount == 2 || teamCount == 3)
         teamCount = (teamCount + 1) % 4;
@@ -25,6 +28,17 @@ function cycleTeamCount() {
         teamCount = 2;
 
     document.getElementById("cycleTeamCount").textContent = `team count: ${teamCount == 0 ? "Any" : teamCount}`;
+}
+
+async function fetchFile(file) {
+    if (!file) {
+        console.log("fetchFile() was not given a file!");
+        return null;
+    }
+    const response = await fetch(`./${file}`);
+    const gamejson = await response.json();
+    //console.log(gamejson);
+    return gamejson;
 }
 
 async function fetchTeams(game) {
@@ -44,6 +58,8 @@ async function gatherFests() {
     const s1_data = await fetchTeams("splatoon");
     const s2_data = await fetchTeams("splatoon_2");
     const s3_data = await fetchTeams("splatoon_3");
+    const newAltData = await fetchFile("assets/banner_alts.json);
+    altData = newAltData;   
 
     while (festTeams.length > 0)
         festTeams.pop();
