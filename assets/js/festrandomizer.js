@@ -118,6 +118,11 @@ function generateFest() {
         teams.push(festTeams[Math.round(Math.random() * festTeams.length)]);
     console.log(teams);
 
+    var variant = 0;
+    if (!altData["alts"][teams[0]]) {
+        console.log("no alt on index 0");
+    }
+
     //document.getElementById("bannerAlpha").hidden = false;
     //document.getElementById("bannerBravo").hidden = false;
     document.getElementById("bannerCharlie").hidden = _teamcount < 3;
