@@ -1,32 +1,20 @@
 {
-    "alts": [
-        {
-            "original": "Money",
-            "variants": [
-                "Money",
-                "Money_3"
-            ]
-        },
-        {
-            "original": "Love",
-            "variants": [
-                "Love",
-                "Love_3"
-            ]
-        },
-        {
-            "original": "Pokémon Red",
-            "variants": [
-                "Pokémon Red",
-                "Pokémon Red_2"
-            ]
-        },
-        {
-            "original": "Rock",
-            "variants": [
-                "Rock",
-                "Rock_2"
-            ]
-        }
-    ]
+    "alts": {
+        "Money": [
+            "Money",
+            "Money_3"
+        ],
+        "Love": [
+            "Love",
+            "Love_3"
+        ],
+        "Pokémon Red": [
+            "Pokémon Red",
+            "Pokémon Red_2"
+        ],
+        "Rock": [
+            "Rock",
+            "Rock_2"
+        ]
+    }
 }
