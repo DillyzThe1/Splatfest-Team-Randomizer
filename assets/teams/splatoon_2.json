@@ -54,8 +54,8 @@
             "jp": true
         },
         {
-            "alpha": "Money",
-            "bravo": "Love",
+            "alpha": "Money_2",
+            "bravo": "Love_2",
             "na": true,
             "eu": false,
             "jp": false
@@ -103,8 +103,8 @@
             "jp": false
         },
         {
-            "alpha": "Squid",
-            "bravo": "Octopus",
+            "alpha": "Squid_2",
+            "bravo": "Octopus_2",
             "na": true,
             "eu": true,
             "jp": true
@@ -223,7 +223,7 @@
         },
         {
             "alpha": "Salty",
-            "bravo": "Sweet",
+            "bravo": "Sweet_2",
             "na": false,
             "eu": true,
             "jp": false
@@ -244,7 +244,7 @@
         },
         {
             "alpha": "Time Travel",
-            "bravo": "Teleporter",
+            "bravo": "Teleportation",
             "na": false,
             "eu": true,
             "jp": false
@@ -257,8 +257,8 @@
             "jp": false
         },
         {
-            "alpha": "Rock",
-            "bravo": "Pop",
+            "alpha": "Rock_2",
+            "bravo": "Pop_2",
             "na": false,
             "eu": false,
             "jp": true
@@ -280,13 +280,6 @@
         {
             "alpha": "Lemon",
             "bravo": "No Lemon",
-            "na": false,
-            "eu": false,
-            "jp": true
-        },
-        {
-            "alpha": "Inner Wear",
-            "bravo": "Outer Wear",
             "na": false,
             "eu": false,
             "jp": true
@@ -341,8 +334,8 @@
             "jp": true
         },
         {
-            "alpha": "Mushroom Mountain",
-            "bravo": "Bamboo Shoot Village",
+            "alpha": "Mushroom Mountain_2",
+            "bravo": "Bamboo Shoot Village_2",
             "na": false,
             "eu": false,
             "jp": true
@@ -356,14 +349,14 @@
         },
         {
             "alpha": "Pocky Chocolate",
-            "bravo": "Pocky: Gokuboso",
+            "bravo": "Pocky Gokuboso",
             "na": false,
             "eu": false,
             "jp": true
         },
         {
-            "alpha": "Boke",
-            "bravo": "Tsukkomi",
+            "alpha": "Boke_2",
+            "bravo": "Tsukkomi_2",
             "na": false,
             "eu": false,
             "jp": true

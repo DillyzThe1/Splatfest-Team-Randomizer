@@ -3,8 +3,20 @@
     "map": {
         "site.title": "Splatfest Randomizer (WIP)",
         "banner.Money_3": "Money",
+        "banner.Money_2": "Money",
         "banner.Love_3": "Love",
+        "banner.Love_2": "Love",
         "banner.Pokémon Red_JPN": "Pokémon Red",
-        "banner.Rock_3": "Rock"
+        "banner.Rock_3": "Rock",
+        "banner.Pop_2": "Pop",
+        "banner.Rock_2": "Rock",
+        "banner.Bamboo Shoot Village_2": "Bamboo Shoot Village",
+        "banner.Mushroom Mountain_2": "Mushroom Mountain",
+        "banner.Boke_2": "Boke",
+        "banner.Octopus_2": "Octopus",
+        "banner.Squid_2": "Squid",
+        "banner.Sweet_2": "Sweet",
+        "banner.Tsukkomi_2": "Tsukkomi",
+        "banner.Pocky Gokuboso": "Pocky: Gokuboso"
     }
 }
