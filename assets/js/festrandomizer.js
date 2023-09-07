@@ -168,3 +168,31 @@ function generateFest() {
         _teammmm.push(getTranslation(`banner.${teams[i]}`, teams[i]));
     document.getElementById("festname").textContent = _teamcount == 2 ? (`${_teammmm[0]} vs ${_teammmm[1]}`) : (`${_teammmm[0]} vs ${_teammmm[1]} vs ${_teammmm[2]}`);
 }
+
+
+async function asyncExportBanner() {
+    if (teams.length < 1)
+        return;
+
+    var canvas = document.querySelector("canvas");
+    var ctx = canvas.getContext("2d");
+
+    for (var i = 0; i < teams.length; i++) {
+        var curTeam = new Image();
+        curTeam.id = "loader" + i;
+        curTeam.src = genBannerPath(teams[i]);
+        await curTeam.decode();
+        ctx.drawImage(curTeam, 400 * i, 0, 400, 450);
+        curTeam.remove();
+    }
+
+    var downloader = document.createElement('a');
+    downloader.download = teams.length == 3 ? `${teams[0]} vs ${teams[1]} vs ${teams[2]}.png` : `${teams[0]} vs ${teams[1]}.png`;
+    downloader.href = canvas.toDataURL()
+    downloader.click();
+    downloader.remove();
+}
+
+function exportBanner() {
+    asyncExportBanner();
+}

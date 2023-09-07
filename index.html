@@ -2,6 +2,7 @@
 
 <html>
     <head>
+        <canvas width="800" height="450" hidden="true"></canvas>
         <!--title id="pageTitle">Splatfest Randomizer (WIP)</title-->
         <script src="./assets/js/festrandomizer.js" language="javascript" type="text/javascript"></script>
         <script>
@@ -13,7 +14,7 @@
             callNewStuff();
         </script>
     </head>
-    <body>
+    <body id="body">
         <a style="color: red; font-size: large;">Warning: This site is under development & has 0 UI.</a><br>
         <a style="color: orangered; font-size: medium;">Also, you may report issues, make suggestions, or just straight up contribute <a href="https://github.com/DillyzThe1/Splatfest-Team-Randomizer">here</a>.</a><br>
         <br>
@@ -66,5 +67,6 @@
         <div id="banner">
             <image id="bannerAlpha" src="./assets/banners/Spongebob.png" width="25%"></image><image id="bannerBravo" src="./assets/banners/Spongebob.png" width="25%"></image><image id="bannerCharlie" src="./assets/banners/Spongebob.png" width="25%"></image>
         </div>
+        <button type="button" id="exportBanner" value="load" onclick="exportBanner()">export banner</button><br>
     </body>
 </html>
