@@ -190,11 +190,45 @@ async function asyncExportBanner() {
 
     var downloader = document.createElement('a');
     downloader.download = teams.length == 3 ? `${teams[0]} vs ${teams[1]} vs ${teams[2]}.png` : `${teams[0]} vs ${teams[1]}.png`;
-    downloader.href = canvas.toDataURL()
+    downloader.href = canvas.toDataURL();
     downloader.click();
     downloader.remove();
 }
 
 function exportBanner() {
     asyncExportBanner();
+}
+
+async function asyncExportSiteBG(sizeDiv) {
+    console.log("Making site BG!");
+    var canvas = document.querySelector("canvas");
+    var ctx = canvas.getContext("2d");
+
+    var sizeMult = sizeDiv ? 1/sizeDiv : 1/8;
+    console.log(`Site background is scaled by ${sizeMult} (1/${sizeMult ? sizeDiv : 8})!`);
+
+    var idw = 400 * sizeMult, idh = 450 * sizeMult;
+    var horizontalMax = Math.ceil(Math.sqrt(festTeams.length));
+    console.log(`Horizontal max is ${horizontalMax}, which the square root of ${festTeams.length} is ${Math.sqrt(festTeams.length)}.`);
+    canvas.width = idw * horizontalMax;
+    canvas.height = idh * horizontalMax;
+
+    for (var i = 0; i < festTeams.length; i++) {
+        var curTeam = new Image();
+        curTeam.id = "loader" + i;
+        curTeam.src = genBannerPath(festTeams[i]);
+        await curTeam.decode();
+        ctx.drawImage(curTeam, idw * (i % horizontalMax), idh * Math.floor(i / horizontalMax), idw, idh);
+        curTeam.remove();
+    }
+
+    var downloader = document.createElement('a');
+    downloader.download = 'siteBG.png';
+    downloader.href = canvas.toDataURL();
+    downloader.click();
+    downloader.remove();
+}
+
+function exportSiteBG(sizeDiv) {
+    asyncExportSiteBG(sizeDiv);
 }
