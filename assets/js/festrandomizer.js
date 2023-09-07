@@ -177,6 +177,8 @@ async function asyncExportBanner() {
     var canvas = document.querySelector("canvas");
     var ctx = canvas.getContext("2d");
 
+    canvas.width = 400 * teams.length;
+
     for (var i = 0; i < teams.length; i++) {
         var curTeam = new Image();
         curTeam.id = "loader" + i;
