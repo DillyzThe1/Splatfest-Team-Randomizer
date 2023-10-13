@@ -1,0 +1,13 @@
+{
+    "name": {
+        "en_us": "Custom",
+        "jp_jp": "カスタム"
+    },
+    "fests": [
+        {
+            "theme": "Which mob should be in Minecraft?",
+            "teams": ["Crab", "Armadillo", "Penguin"],
+            "creator": "Impostor5875 (Splatfest) & Mojang (Mob Vote)"
+        }
+    ]
+}

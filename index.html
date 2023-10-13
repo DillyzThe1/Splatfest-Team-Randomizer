@@ -62,6 +62,12 @@
             document.getElementById('s3_toggle').textContent = `Splatoon 3: ${s3 ? 'Enabled' : 'Disabled'}`;
             gatherFests();
         ">Splatoon 3: Enabled</button><br>
+
+        <button type="button" id="custom_toggle" value="load" onclick="
+            customcontent = !customcontent;
+            document.getElementById('custom_toggle').textContent = `Custom: ${customcontent ? 'Enabled' : 'Disabled'}`;
+            gatherFests();
+        ">Custom Fests: Disabled</button><br>
         <!-- -->
 
         <a id="festname">Spongebob vs Spongebob vs Spongebob</a>

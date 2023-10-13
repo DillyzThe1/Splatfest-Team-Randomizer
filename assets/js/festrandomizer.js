@@ -11,6 +11,9 @@ var s2_jp = true;
 // Splatoon 3 Fests
 var s3 = true;
 
+// Custom Fests
+var customcontent = false;
+
 // 2 or 3 for chosen count, other for random.
 var teamCount = 2;
 var teams = [];
@@ -90,6 +93,7 @@ async function gatherFests() {
     const s1_data = await fetchTeams("splatoon");
     const s2_data = await fetchTeams("splatoon_2");
     const s3_data = await fetchTeams("splatoon_3");
+    const custom_data = await fetchTeams("custom");
 
     while (festTeams.length > 0)
         festTeams.pop();
@@ -130,6 +134,13 @@ async function gatherFests() {
             if (!festTeams.includes(s3_data.teams[i].charlie))
                 festTeams.push(s3_data.teams[i].charlie);
         }
+    }
+
+    if (custom_data && customcontent) {
+        console.log(`Gathering fests for ${custom_data.name.en_us}! (${custom_data.name.jp_jp})`);
+        for (var i = 0; i < custom_data.fests.length; i++)
+            for (var t = 0; t < custom_data.fests[i].teams.length; t++)
+                festTeams.push("Custom/" + custom_data.fests[i].teams[t]);
     }
 
     console.log(festTeams);
