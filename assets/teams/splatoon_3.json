@@ -53,6 +53,11 @@
             "alpha": "Shiver",
             "bravo": "Frye",
             "charlie": "Big Man"
+        },
+        {
+            "alpha": "Zombie",
+            "bravo": "Skeleton",
+            "charlie": "Ghost"
         }
     ]
 }
